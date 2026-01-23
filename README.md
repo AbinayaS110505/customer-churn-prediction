@@ -125,7 +125,7 @@ Interpretation:
 0.75 / 0.68 → High churn risk
 
 0.01 / 0.12 → Low churn risk
----
+
 ##▶️ How to Run This Project
 
 Open the notebook in Google Colab
@@ -143,8 +143,11 @@ Classification Report
 Feature Importance
 
 Churn Probability
+
+
 ---
 👩‍💻 Author
-
+---
 Abinaya S
+---
 ****
