@@ -115,17 +115,18 @@ Instead of only predicting **Yes/No**, the Logistic Regression model also provid
 
 Example output:
 
-```text
+---
+
 Top 10 churn probabilities:
 [0.0056, 0.1242, 0.6838, 0.1126, 0.3617, 0.4456, 0.1305, 0.7569, 0.2173, 0.0183]
-
+---
 Interpretation:
 
 0.75 / 0.68 → High churn risk
 
 0.01 / 0.12 → Low churn risk
-
-▶️ How to Run This Project
+---
+##▶️ How to Run This Project
 
 Open the notebook in Google Colab
 
@@ -142,6 +143,8 @@ Classification Report
 Feature Importance
 
 Churn Probability
+---
 👩‍💻 Author
 
 Abinaya S
+****
