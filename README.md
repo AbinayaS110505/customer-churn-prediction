@@ -1,80 +1,147 @@
-Customer Churn Prediction (Machine Learning)
-📖 Project Overview
+# 📌 Customer Churn Prediction (Telco Dataset)
 
-Customer Churn Prediction is a Machine Learning project to predict whether a customer will leave the company (Churn = Yes) or stay (Churn = No) based on customer details like contract type, monthly charges, tenure, and services used.
+## 📖 Project Overview
+This project predicts whether a customer will **churn (leave the service)** or **not churn (stay)** using Machine Learning.
 
-This helps companies to identify customers who are likely to leave and take actions like giving offers or better support.
+The goal is to help companies **identify high-risk customers early** and take actions like:
+- offering discounts
+- improving customer support
+- reducing customer loss
 
-🎯 Problem Statement
 
-Build a model that predicts customer churn using historical customer data.
+---
 
-📂 Dataset
+## 🎯 Problem Statement
+Build a Machine Learning model that classifies customers into:
 
-Telco Customer Churn Dataset (Kaggle)
-Dataset contains customer information such as:
+- **Churn = 1** → Customer will leave  
+- **Churn = 0** → Customer will stay  
 
-tenure
 
-MonthlyCharges
+---
 
-TotalCharges
+## 📂 Dataset Information
+**Dataset Name:** Telco Customer Churn (Kaggle)
 
-Contract type
+The dataset contains customer information such as:
+- `tenure`
+- `MonthlyCharges`
+- `TotalCharges`
+- `Contract`
+- `InternetService`
+- `PaymentMethod`
+- `OnlineSecurity`
+- `TechSupport`
 
-Internet service
+✅ **Target Column:** `Churn`
 
-Payment method
-Target column: Churn (Yes/No)
 
-🛠 Tools & Technologies Used
+---
 
-Python
+## 🛠 Tools & Technologies Used
+- **Python**
+- **Google Colab**
+- **Pandas, NumPy**
+- **Matplotlib**
+- **Scikit-learn**
 
-Google Colab
 
-Pandas, NumPy
+---
 
-Scikit-learn (Logistic Regression)
+## 🔍 Steps Followed
 
-⚙️ Steps Followed
+### 1️⃣ Data Loading
+The dataset was loaded directly in Google Colab using KaggleHub.
 
-Loaded dataset from Kaggle in Google Colab
+### 2️⃣ Data Cleaning
+✔ Converted `TotalCharges` to numeric  
+✔ Removed missing values  
+✔ Converted `Churn` from **Yes/No → 1/0**  
+✔ Removed `customerID` column  
 
-Cleaned the data (handled TotalCharges conversion and missing values)
+### 3️⃣ Exploratory Data Analysis (EDA)
+✔ Checked dataset shape and column details  
+✔ Visualized churn distribution using a bar chart  
 
-Converted target column Churn from Yes/No → 1/0
+### 4️⃣ Feature Encoding
+Categorical values were converted into numeric values using:
 
-Encoded categorical columns using get_dummies()
+- `pd.get_dummies()`
 
-Split dataset into Train and Test sets
+### 5️⃣ Model Training
+Two models were trained and compared:
 
-Trained Logistic Regression model
+- **Logistic Regression**
+- **Random Forest**
 
-Evaluated model using Accuracy, Confusion Matrix, Classification Report
+### 6️⃣ Model Evaluation
+Model performance was evaluated using:
 
-📊 Model Performance
+- Accuracy Score  
+- Confusion Matrix  
+- Classification Report  
 
-Model Used: Logistic Regression
-Accuracy: ~78.7%
 
-Example Output:
+---
 
-Accuracy: 0.787
+## 📊 Results
 
-Confusion Matrix and Classification Report included in notebook
+### ✅ Logistic Regression
+**Accuracy:** `0.787` (≈ 78.7%)
 
-▶️ How to Run
+### ✅ Random Forest
+**Accuracy:** `0.785` (≈ 78.5%)
 
-Open the notebook file:
-Customer_Churn_Prediction.ipynb
+📌 Logistic Regression performed slightly better in this dataset.
 
-Run all cells in Google Colab
 
-✅ Final Result
+---
 
-The model predicts whether a customer will churn or not, helping businesses reduce customer loss and improve retention.
+## 🧠 Interpretability (Feature Importance)
+Random Forest Feature Importance was used to understand the most important factors for churn.
 
+### 🔝 Top Important Features
+- `TotalCharges`
+- `MonthlyCharges`
+- `tenure`
+- `InternetService_Fiber optic`
+- `PaymentMethod_Electronic check`
+
+
+---
+
+## 📈 Churn Probability (Risk Score)
+Instead of only predicting **Yes/No**, the Logistic Regression model also provides churn probability.
+
+Example output:
+
+```text
+Top 10 churn probabilities:
+[0.0056, 0.1242, 0.6838, 0.1126, 0.3617, 0.4456, 0.1305, 0.7569, 0.2173, 0.0183]
+
+Interpretation:
+
+0.75 / 0.68 → High churn risk
+
+0.01 / 0.12 → Low churn risk
+
+▶️ How to Run This Project
+
+Open the notebook in Google Colab
+
+Run all cells from top to bottom
+
+The output will show:
+
+Accuracy
+
+Confusion Matrix
+
+Classification Report
+
+Feature Importance
+
+Churn Probability
 👩‍💻 Author
 
 Abinaya S
